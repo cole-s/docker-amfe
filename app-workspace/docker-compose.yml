@@ -1,0 +1,22 @@
+services:
+  app-shell:
+    build:
+      target: app-shell  # Uses app-shell stage from Dockerfile
+    ports:
+      - "4200:80"
+  
+  app-one:
+    build:
+      target: app-one    # Uses app-one stage from Dockerfile
+    ports:
+      - "4201:80"
+      
+  app-two:
+    build:
+      target: app-two    # Uses app-two stage from Dockerfile
+    ports:
+      - "4202:80"
+
+# environment:
+#   - APP_ONE_URL=https://app-one.mycompany.com
+#   - APP_TWO_URL=https://app-two.different-cloud.com
