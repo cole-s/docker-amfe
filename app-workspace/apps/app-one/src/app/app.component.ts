@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { UiLabelComponent } from '@app-workspace/ui';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
+  imports: [RouterModule, UiLabelComponent],
+  selector: 'app-one-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
