@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,4 +8,11 @@ import { CommonModule } from '@angular/common';
   templateUrl: './ui-button.component.html',
   styleUrl: './ui-button.component.css',
 })
-export class UiButtonComponent {}
+export class UiButtonComponent {
+  @Input() label = "";
+  @Output() clickEvent: EventEmitter<void> = new EventEmitter();
+
+  public onClick(): void {
+    this.clickEvent.emit();
+  }
+}

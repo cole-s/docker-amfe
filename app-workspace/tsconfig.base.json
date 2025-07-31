@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@app-workspace/app-one/*": ["apps/app-one/src/app/*"],
-      "@app-workspace/app-two/*": ["apps/app-two/src/app/*"],
+      "@app-one/*": ["apps/app-one/src/app/*"],
+      "@app-two/*": ["apps/app-two/src/app/*"],
       "@app-workspace/ui": ["libs/ui/src/index.ts"]
     }
   },
