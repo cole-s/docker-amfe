@@ -1,15 +1,37 @@
-/* eslint-disable @nx/enforce-module-boundaries */
-import { Route } from '@angular/router';
+import { Routes } from '@angular/router';
+import { loadRemoteModule } from '@angular-architects/module-federation';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-export const appRoutes: Route[] = [
-
-    {
-        path: 'app-one',
-        loadComponent: () => import('@app-one/app.component').then(m => m.AppComponent)
-    },
-    {
-        path: 'app-two',
-        loadComponent: () => import('@app-two/app.component').then(m => m.AppComponent)
-    },
-
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'app-one',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        exposedModule: './Routes'
+      }).then(m => m.routes)
+  },
+  {
+    path: 'app-two',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4202/remoteEntry.js',
+        exposedModule: './Routes'
+      }).then(m => m.routes)
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/dashboard'
+  }
 ];

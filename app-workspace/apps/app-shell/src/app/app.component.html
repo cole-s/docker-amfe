@@ -1,3 +1,13 @@
-<h1>App Shell</h1>
-<router-outlet></router-outlet>
-<lib-ui-button [label]="'App One'" (clickEvent)="navigateToPage()"></lib-ui-button>
+<app-layout>
+  <app-header>
+    <app-navigation>
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/app-one" routerLinkActive="active">App One</a>
+      <a routerLink="/app-two" routerLinkActive="active">App Two</a>
+    </app-navigation>
+  </app-header>
+  
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</app-layout>

@@ -17,6 +17,7 @@
     "paths": {
       "@app-one/*": ["apps/app-one/src/app/*"],
       "@app-two/*": ["apps/app-two/src/app/*"],
+      "@app-workspace/layout": ["libs/ui/src/lib/layout/src/index.ts"],
       "@app-workspace/ui": ["libs/ui/src/index.ts"]
     }
   },

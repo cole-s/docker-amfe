@@ -4,7 +4,7 @@ module.exports = ModuleFederationPlugin({
   name: "app_two",
   filename: "remoteEntry.js",
   exposes: {
-    "./Module": "./apps/app-two/src/app/app.module.ts",
+    "./Routes": "./apps/app-two/src/app/app.routes.ts",
     "./Component": "./apps/app-two/src/app/app.component.ts",
   },
   shared: {
