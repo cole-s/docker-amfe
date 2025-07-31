@@ -1,22 +1,42 @@
+version: '3.8'
+
 services:
   app-shell:
     build:
-      target: app-shell  # Uses app-shell stage from Dockerfile
+      context: .
+      dockerfile: Dockerfile
+      target: app-shell
     ports:
       - "4200:80"
-  
+    environment:
+      - APP_ONE_URL=http://localhost:4201
+      - APP_TWO_URL=http://localhost:4202
+    depends_on:
+      - app-one
+      - app-two
+    networks:
+      - microfrontend-network
+
   app-one:
     build:
-      target: app-one    # Uses app-one stage from Dockerfile
+      context: .
+      dockerfile: Dockerfile
+      target: app-one
     ports:
       - "4201:80"
-      
+    networks:
+      - microfrontend-network
+
   app-two:
     build:
-      target: app-two    # Uses app-two stage from Dockerfile
+      context: .
+      dockerfile: Dockerfile
+      target: app-two
     ports:
       - "4202:80"
+    networks:
+      - microfrontend-network
 
-# environment:
-#   - APP_ONE_URL=https://app-one.mycompany.com
-#   - APP_TWO_URL=https://app-two.different-cloud.com
+networks:
+  microfrontend-network:
+    driver: bridge
