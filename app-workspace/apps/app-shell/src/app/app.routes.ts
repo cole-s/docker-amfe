@@ -1,7 +1,5 @@
 import { Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
 export const routes: Routes = [
   {
     path: '',
@@ -26,10 +24,10 @@ export const routes: Routes = [
         exposedModule: './Routes'
       }).then(m => m.routes)
   },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
+  // {
+  //   path: 'dashboard',
+  //   component: DashboardComponent
+  // },
   {
     path: '**',
     redirectTo: '/dashboard'

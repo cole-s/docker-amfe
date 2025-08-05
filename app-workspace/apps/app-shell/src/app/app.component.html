@@ -1,13 +1,11 @@
-<app-layout>
-  <app-header>
-    <app-navigation>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/app-one" routerLinkActive="active">App One</a>
-      <a routerLink="/app-two" routerLinkActive="active">App Two</a>
-    </app-navigation>
-  </app-header>
+<lib-layout>
+  <lib-header slot="header">
+    <lib-navigation>
+      <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/app-one" routerLinkActive="active">App One</a></li>
+      <li><a routerLink="/app-two" routerLinkActive="active">App Two</a></li>
+    </lib-navigation>
+  </lib-header>
   
-  <main class="main-content">
-    <router-outlet></router-outlet>
-  </main>
-</app-layout>
+  <router-outlet></router-outlet>
+</lib-layout>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-// Import your UI library components
-import { HeaderComponent, NavigationComponent, LayoutComponent } from '@app-workspace/ui';
+// Import shared UI components
+import { LayoutComponent, NavigationComponent, HeaderComponent } from '@app-workspace/ui';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,10 @@ import { HeaderComponent, NavigationComponent, LayoutComponent } from '@app-work
     RouterOutlet, 
     RouterLink, 
     RouterLinkActive,
-    // Add your UI library components here
-    HeaderComponent,
+    // Add shared UI components
+    LayoutComponent,
     NavigationComponent, 
-    LayoutComponent
+    HeaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
