@@ -1,6 +1,8 @@
 #!/bin/bash
-echo "Building UI Library..."
-npx nx build ui
+# echo "Building UI Library..."
+# npx nx build ui
+
+echo "Skipping UI library build (consumbed directly by apps)..."
 
 echo "Building app-shell..."
 npx nx build app-shell --configuration=production
