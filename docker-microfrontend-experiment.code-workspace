@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"nxConsole.nxWorkspacePath": "app-workspace",
+		"nxConsole.generateAiAgentRules": true
+	}
+}
