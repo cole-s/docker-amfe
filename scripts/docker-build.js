@@ -6,9 +6,10 @@ function run(command) {
 }
 
 console.log('Building Docker Images');
+console.log(process.cwd())
 
-run('docker build --no-cache --target app-shell -t app-workspace/app-shell:v1.0.0 .');
-run('docker build --no-cache --target app-one -t app-workspace/app-one:v1.0.0 .');
-run('docker build --no-cache --target app-two -t app-workspace/app-two:v1.0.0 .');
+run('docker build -f apps/app-shell/Dockerfile -t app-workspace/app-shell:latest .');
+run('docker build -f apps/app-one/Dockerfile -t app-workspace/app-one:latest .');
+run('docker build -f apps/app-two/Dockerfile -t app-workspace/app-two:latest .');
 
 console.log('\n✅ All Docker images built successfully!');
