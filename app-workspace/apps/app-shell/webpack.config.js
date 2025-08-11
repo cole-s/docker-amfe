@@ -10,7 +10,6 @@ module.exports = ModuleFederationPlugin({
     "@angular/core": { singleton: true, strictVersion: true },
     "@angular/common": { singleton: true, strictVersion: true },
     "@angular/router": { singleton: true, strictVersion: true },
-    // Share your UI library
     "@app-workspace/ui": { singleton: true, strictVersion: true },
   },
 });

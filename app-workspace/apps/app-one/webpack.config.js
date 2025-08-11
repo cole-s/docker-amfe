@@ -4,8 +4,7 @@ module.exports = ModuleFederationPlugin({
   name: "app_one",
   filename: "remoteEntry.js",
   exposes: {
-    "./Routes": "./apps/app-one/src/app/app.routes.ts",
-    "./Component": "./apps/app-one/src/app/app.component.ts",
+    "./Routes": "./src/app/app.routes.ts",
   },
   shared: {
     "@angular/core": { singleton: true, strictVersion: true },

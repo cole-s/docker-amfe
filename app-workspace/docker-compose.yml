@@ -4,8 +4,7 @@ services:
   app-shell:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: app-shell
+      dockerfile: apps/app-shell/Dockerfile
     ports:
       - "4200:80"
     environment:
@@ -20,8 +19,7 @@ services:
   app-one:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: app-one
+      dockerfile: apps/app-one/Dockerfile
     ports:
       - "4201:80"
     networks:
@@ -30,8 +28,7 @@ services:
   app-two:
     build:
       context: .
-      dockerfile: Dockerfile
-      target: app-two
+      dockerfile: apps/app-two/Dockerfile
     ports:
       - "4202:80"
     networks:
